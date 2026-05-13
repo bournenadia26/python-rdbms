@@ -37,13 +37,21 @@ execution.
 
 ## Architecture
 Database
+
 └── Table
+
 ├── Page Directory (RID → physical location)
+
 ├── Page Ranges
+
 │   ├── Base Pages (read-optimized, columnar)
+
 │   └── Tail Pages (write-optimized, append-only)
+
 ├── Bufferpool (LRU eviction, dirty tracking, pin/unpin)
+
 ├── Index (primary + secondary)
+
 └── Merge Thread (background, contention-free)
 
 ---
