@@ -36,23 +36,15 @@ bufferpool, and indexes. Fixed-size worker thread pool for concurrent transactio
 execution.
 
 ## Architecture
+```
 Database
-
 └── Table
-
-├── Page Directory (RID → physical location)
-
-├── Page Ranges
-
-│   ├── Base Pages (read-optimized, columnar)
-
-│   └── Tail Pages (write-optimized, append-only)
-
-├── Bufferpool (LRU eviction, dirty tracking, pin/unpin)
-
-├── Index (primary + secondary)
-
-└── Merge Thread (background, contention-free)
+    ├── Page Directory (RID → physical location)
+    ├── Page Ranges
+    │   ├── Base Pages (read-optimized, columnar)
+    │   └── Tail Pages (write-optimized, append-only)
+    └── Bufferpool
+```
 
 ---
 
